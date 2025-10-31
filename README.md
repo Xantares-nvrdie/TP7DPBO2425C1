@@ -88,8 +88,8 @@ Mirip dengan `Player`, kelas ini hanya menyimpan data.
 
 ## 📸 Tampilan Game
 Contoh:
-<video src="https://raw.githubusercontent.com/Xantares-nvrdie/TP7DPBO2425C1/main/documentation/FlappyBirdRun.mp4" controls width="600">
+<video src="https://raw.githubusercontent.com/Xantares-nvrdie/TP7DPBO2425C1/main/Documentation/FlappyBirdRun.mp4" controls width="600">
   Your browser does not support the video tag.
 </video>
-[![Demo Game](https://raw.githubusercontent.com/Xantares-nvrdie/TP7DPBO2425C1/main/documentation/thumbnail.png)](https://raw.githubusercontent.com/Xantares-nvrdie/TP7DPBO2425C1/main/documentation/FlappyBirdRun.mp4)
+[![Demo Game](https://raw.githubusercontent.com/Xantares-nvrdie/TP7DPBO2425C1/main/Documentation/thumbnail.png)](https://raw.githubusercontent.com/Xantares-nvrdie/TP7DPBO2425C1/main/documentation/FlappyBirdRun.mp4)
 
