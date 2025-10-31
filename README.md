@@ -86,6 +86,53 @@ Mirip dengan `Player`, kelas ini hanya menyimpan data.
 - `passed` (`boolean`): Penanda apakah pipa ini sudah dilewati oleh pemain (untuk menghitung skor).
 - `image` (`Image`): Sprite pipa (atas atau bawah).
 
+## Alur Program
+1.  **Inisialisasi Program**
+    * `App.java` dieksekusi, yang berfungsi sebagai titik masuk.
+    * Sebuah `JFrame` (window utama) dibuat.
+    * Objek `MainMenuPanel` dibuat dan ditambahkan ke `JFrame`.
+    * Menu utama dengan gambar latar dan dua tombol (`Play`, `Exit`) ditampilkan ke pengguna.
+
+2.  **Interaksi Menu Utama**
+    * Program menunggu `ActionListener` dari tombol-tombol.
+    * Jika pengguna menekan "Exit", program akan ditutup (`System.exit(0)`).
+    * Jika pengguna menekan "Play Game", metode `startGame()` di dalam `MainMenuPanel` akan dipanggil.
+
+3.  **Transisi ke Game**
+    * Metode `startGame()` menghapus `MainMenuPanel` dari `JFrame`.
+    * Objek `Logic` (sebagai otak game) dan `View` (sebagai panel grafis) baru dibuat.
+    * `View` ditambahkan ke `JFrame`, dan `View` meminta `requestFocusInWindow()` agar siap menerima input keyboard.
+
+4.  **Game Loop Berjalan (Gameplay)**
+    * Saat `Logic` dibuat, dua `Timer` (yaitu `gameLoop` dan `pipesCooldown`) secara otomatis dimulai.
+    * **`pipesCooldown`**: Setiap 1.5 detik, memanggil metode `placePipes()` untuk memunculkan sepasang pipa baru di sisi kanan layar.
+    * **`gameLoop`**: Berjalan 60 kali per detik (~16ms). Setiap *tick*, ia memanggil `actionPerformed` di `Logic`, yang kemudian:
+        * Memanggil metode `move()` (jika `!gameOver`).
+        * Memanggil `view.repaint()` untuk menggambar ulang layar.
+    * **Input Pemain**: Saat pemain menekan **SPACE**, `KeyListener` di `Logic` mendeteksinya dan memanggil `player.setVelocityY(-10)` untuk membuat burung melompat.
+
+5.  **Logika di Dalam `move()`**
+    * Metode ini menerapkan gravitasi pada `Player` (`velocityY + gravity`).
+    * Ia menggerakkan setiap `Pipe` dalam `ArrayList` ke kiri (`pipeVelocityX`).
+    * Ia mengecek apakah `Player` sudah melewati `Pipe` (untuk menambah `score`).
+    * Ia memanggil `collision()` untuk mengecek tabrakan dengan pipa atau batas bawah layar.
+
+6.  **Kondisi Game Over**
+    * Jika `collision()` mengembalikan `true`, atau jika pemain jatuh (`player.getPosY() >= frameHeight`):
+        * Variabel `gameOver` di `Logic` diatur ke `true`.
+        * `Timer` `gameLoop` dan `pipesCooldown` segera dihentikan (`.stop()`).
+        * `View` (dalam metode `draw()`) kini akan menggambar gambar "Game Over" dan teks "Press 'R' to restart".
+
+7.  **Restart Game**
+    * Dalam kondisi *game over*, pemain menekan tombol **R**.
+    * `KeyListener` di `Logic` mendeteksi ini dan memanggil `restartGame()`.
+    * Metode `restartGame()` akan:
+        * Mereset posisi `Player` dan `score`.
+        * Mengosongkan `ArrayList` `pipes`.
+        * Mengatur `gameOver` kembali ke `false`.
+        * Menyalakan kembali kedua `Timer` (`gameLoop.start()`, `pipesCooldown.start()`).
+    * Alur program kembali ke langkah #4 (Game Loop Berjalan).
+
 ## 📸 Tampilan Game
 https://github.com/user-attachments/assets/5db1feae-afdd-4420-8566-3fcb0782943b
 
