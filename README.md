@@ -87,9 +87,6 @@ Mirip dengan `Player`, kelas ini hanya menyimpan data.
 - `image` (`Image`): Sprite pipa (atas atau bawah).
 
 ## 📸 Tampilan Game
-Contoh:
-<video src="https://raw.githubusercontent.com/Xantares-nvrdie/TP7DPBO2425C1/main/Documentation/FlappyBirdRun.mp4" controls width="600">
-  Your browser does not support the video tag.
-</video>
-[![Demo Game](https://raw.githubusercontent.com/Xantares-nvrdie/TP7DPBO2425C1/main/Documentation/thumbnail.png)](https://raw.githubusercontent.com/Xantares-nvrdie/TP7DPBO2425C1/main/documentation/FlappyBirdRun.mp4)
+https://github.com/user-attachments/assets/5db1feae-afdd-4420-8566-3fcb0782943b
+
 
