@@ -1,5 +1,5 @@
-# TP7DPBO2425C1
-TUGAS PRAKTIKUM 7 DPBO GAMEDEV
+# TP6DPBO2425C1
+TUGAS PRAKTIKUM 6 DPBO GAMEDEV
 # Flappy Bird (Java Swing Project)
 Sebuah adaptasi game Flappy Bird klasik yang dibuat menggunakan Java Swing. Proyek ini menerapkan konsep-konsep inti PBO, termasuk enkapsulasi, penanganan event (Keyboard & Action Listener), dan rendering grafis kustom dengan `JPanel` dan `Timer`.
 
