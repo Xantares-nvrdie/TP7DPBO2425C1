@@ -5,10 +5,12 @@ class Category {
     private $db;
     private $table_name = "categories";
 
+    //untuk koneksi database
     public function __construct() {
         $this->db = (new Database())->conn;
     }
 
+    //mengambil semua data category
     public function getAllCategory() {
         $query = "SELECT * FROM " . $this->table_name . " ORDER BY name";
         $stmt = $this->db->prepare($query);
@@ -16,6 +18,7 @@ class Category {
         return $stmt->fetchAll();
     }
 
+    //menambahkan data category
     public function addCategory($name){
         $query = "INSERT INTO " . $this->table_name . " (name) VALUES (?)";
         $stmt = $this->db->prepare($query);
@@ -27,6 +30,7 @@ class Category {
         }
     }
 
+    //mengupdate data category
     public function updateCategory($id, $name){
         $query = "UPDATE " . $this->table_name . " SET name = ? WHERE id = ?";
         $stmt = $this->db->prepare($query);
@@ -35,6 +39,7 @@ class Category {
         return $stmt->rowCount() > 0;
     }
 
+    //menghapus data category
     public function deleteCategory($id){
         $query = "DELETE FROM " . $this->table_name . " WHERE id = ?";
         $stmt = $this->db->prepare($query);
@@ -43,6 +48,7 @@ class Category {
         return $stmt->rowCount() > 0;
     }
 
+    //mengambil data category berdasarkan id
     public function readCategory($id){
         $query = "SELECT * FROM " . $this->table_name . " WHERE id = ? LIMIT 1";
         $stmt = $this->db->prepare($query);
