@@ -1,0 +1,23 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Node / npm
+node_modules/
+
+# PHP / composer
+vendor/
+
+# Environment files
+.env
+
+# Logs
+*.log
+
+# IDE / editor files
+.vscode/
+.idea/
+
+# Build
+dist/
+build/
