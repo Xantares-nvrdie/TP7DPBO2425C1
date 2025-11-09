@@ -110,4 +110,6 @@ Database yang digunakan adalah `db_catalogueElectronics`. Terdiri dari 3 tabel (
 
 
 # Demo
+https://github.com/user-attachments/assets/5f40c790-212b-481a-9816-18ff3484d6a3
+
 
