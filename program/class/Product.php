@@ -10,7 +10,7 @@ class Product {
         }
         $this->db = (new Database())->conn;
     }
-
+    
     public function getAllProduct() {
         $query="SELECT 
                 p.id, p.name, p.price, p.stock,
